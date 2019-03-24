@@ -4,17 +4,23 @@
 using namespace std;
 
 int main () {
-    int t,r1,r2,b;
-    double c_r,r_r,ball_played;
+
+    int t,r1,r2;
+    double c_r,r_r,ball_played,b;
 
     cin >> t;
     while (t--) {
         cin >> r1 >> r2 >> b;
         ball_played=300-b;
-        ball_played*=1.0;
-        c_r=(r2/ball_played)*6;
-        r_r=(((r1-r2+1)*1.0)/b)*6;
-        printf("%0.2lf %0.2lf\n",c_r,r_r);
+        double temp;
+        temp=r2/ball_played;
+        c_r=(temp)*6;
+        //printf("c_r == %lf\n",c_r);
+        temp=(r1-r2+1)/b;
+        r_r=temp*6;
+        printf("%.2lf ",c_r);
+        printf("%.2lf\n",r_r);
+
     }
 
     return 0;
